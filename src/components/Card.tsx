@@ -1,16 +1,19 @@
+'use client'
 import Image from 'next/image'
-import styles from './productcard.module.css'
+import InteractiveCard from './InteractiveCard';
 
 export default function Card({campName,imgSrc}:{campName:string,imgSrc:string}){
   return (
-    <div className={styles.card}>
-      <div className={styles.cardimg}>
+    <InteractiveCard contentName={campName}>
+      <div className="w-full h-[70%] relative rounded-t-lg">
       <Image src={imgSrc} 
       alt='Product'
       fill = {true}
-      objectFit='cover' />
+      className='object-cover rounded-t-lg' />
       </div>
-      <div className={styles.cardtext}>{campName}</div>
-    </div>
+      <div className="w-full h-[30%] p-[10px]">{campName}</div>
+    </InteractiveCard>
   );
 };
+
+
