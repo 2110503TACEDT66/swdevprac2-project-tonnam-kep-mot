@@ -1,16 +1,16 @@
 import Image from 'next/image'
 import styles from './productcard.module.css'
 
-export default function Card(){
+export default function Card({campName,imgSrc}:{campName:string,imgSrc:string}){
   return (
     <div className={styles.card}>
       <div className={styles.cardimg}>
-      <Image src={'/img/camp1.jpg'} 
+      <Image src={imgSrc} 
       alt='Product'
       fill = {true}
       objectFit='cover' />
       </div>
-      <div className={styles.cardtext}>ลานแคมปิ้งที่ร่มรื่นด้วยร่มเงาของไม้ใหญ่ริมแม่น้ำแควน้อย ค่าบริการสำหรับผู้ใหญ่ 200 บาทต่อคน / คืน </div>
+      <div className={styles.cardtext}>{campName}</div>
     </div>
   );
 };
