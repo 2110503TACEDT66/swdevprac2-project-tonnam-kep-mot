@@ -11,7 +11,7 @@ export default function Booking() {
     const [name, setName] = useState('')
     const [lastname, setLastname] = useState('')
     const [citizenId, setCitizenId] = useState('')
-    const [location, setLocation] = useState<string>('chula')
+    const [location, setLocation] = useState<string>('')
     const [bookingDate, setBookingDate] = useState<Dayjs | null>(null)
     const dispatch = useDispatch<AppDispatch>()
     const makeBooking = () => {
