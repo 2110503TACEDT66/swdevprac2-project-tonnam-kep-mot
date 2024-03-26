@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState } from "react"    
 import VideoPlayer from "./VideoPlayer"
 import { Rating } from "@mui/material"
 import { useWindowListener } from "@/hooks/useWindowListener"
