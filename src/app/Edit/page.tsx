@@ -7,10 +7,9 @@ import dayjs, { Dayjs } from "dayjs";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import { addBooking } from "@/redux/features/bookSlice";
-import updateBooking from "@/libs/addbooking";
+import updateBooking from "@/libs/updateBooking";
 import session from "redux-persist/lib/storage/session";
 import Campground from "../(campinfo)/camp/page";
-import addbooking from "@/libs/addbooking";
 import { useSession } from "next-auth/react";
 export default function Booking() {
     const { data:session } = useSession();
@@ -40,14 +39,14 @@ export default function Booking() {
     //     }
     // }
     const makeReservation = async () => {
-            const data = await addbooking(id,session?.user._id,bookingDate,session?.user.token)
+            const data = await updateBooking(id,session?.user.token,bookingDate)
     }
     return (
         <main className="w-[100%] flex flex-col items-center space-y-4">
-            <div className="text-xl font-medium">Campground Booking</div>
+            <div className="text-xl font-medium">Campground Date Edit</div>
             <FormControl className="w-fit space-y-5 p-[20px] bg-white rounded-2xl flex flex-col items-center">
                 <DateReserve onDateChange={(value:Dayjs) => {setBookingDate(dayjs(value).format())}}/>
-                <button name="Book Vaccine" className=" w-fit block bg-sky-200 text-slate-900 p-[10px] rounded-lg hover:bg-sky-900 hover:text-white font-serif"onClick={()=>{makeReservation();alert()}}>Book Campground</button>
+                <button name="Book Vaccine" className=" w-fit block bg-sky-200 text-slate-900 p-[10px] rounded-lg hover:bg-sky-900 hover:text-white font-serif"onClick={()=>{makeReservation();alert()}}>Edit Campground</button>
             </FormControl>
         </main>
     );

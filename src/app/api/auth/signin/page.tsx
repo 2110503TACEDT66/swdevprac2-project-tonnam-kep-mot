@@ -1,4 +1,5 @@
 "use client";
+import register from "@/libs/register";
 import { signIn, useSession } from "next-auth/react";
 import { redirect } from 'next/navigation'
 import React, { useState } from "react";
@@ -22,6 +23,9 @@ const LoginPage = () => {
       <h1 className=" text-5xl py-10 font-semibold text-black">
         LOGIN
       </h1>
+      <a href="/register">
+        don't have an account? Click here!
+      </a>
       <div className="px-7 py-4 shadow space-y-7 bg-white rounded-md flex flex-col w-2/5">
 
         <div className=" flex flex-row w-full ">

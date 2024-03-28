@@ -15,8 +15,8 @@ interface CampItem {
     data: CampItem[]
   }
   interface BookingItem{
-    name: string;
-    surname: string;
-    id: string;
-    bookDate: string;
+    _id: string;
+    bookingDate: string;
+    user:string;
+    campground:{name:string;address:string;tel:string}
   }

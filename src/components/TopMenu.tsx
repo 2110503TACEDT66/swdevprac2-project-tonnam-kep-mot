@@ -9,6 +9,7 @@ export default async function TopMenu() {
     return (
         <div className={styles.menucontainer}>
             <TopMenuItem title='My Booking' pageRef='/mybooking/'/>
+            <TopMenuItem title='Home' pageRef='/'/>
             <Image src={'/img/logo.jpg'} className={styles.logoimg} alt='logo' width={0} height={0} sizes='100vh' />
             {
                 session ? <Link href="/api/auth/signout"><div className='flex items-center absolute left-0 h-full px-2 
