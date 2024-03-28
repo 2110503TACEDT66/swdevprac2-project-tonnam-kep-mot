@@ -19,4 +19,8 @@ interface CampItem {
     bookingDate: string;
     user:string;
     campground:{name:string;address:string;tel:string}
+    count:number
+  }
+  interface BookingJson{
+    count:number
   }

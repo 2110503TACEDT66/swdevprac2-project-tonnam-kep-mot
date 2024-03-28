@@ -46,7 +46,7 @@ export default function Booking() {
             <div className="text-xl font-medium">Campground Date Edit</div>
             <FormControl className="w-fit space-y-5 p-[20px] bg-white rounded-2xl flex flex-col items-center">
                 <DateReserve onDateChange={(value:Dayjs) => {setBookingDate(dayjs(value).format())}}/>
-                <button name="Book Vaccine" className=" w-fit block bg-sky-200 text-slate-900 p-[10px] rounded-lg hover:bg-sky-900 hover:text-white font-serif"onClick={()=>{makeReservation();alert()}}>Edit Campground</button>
+                <button name="Book Vaccine" className=" w-fit block bg-sky-200 text-slate-900 p-[10px] rounded-lg hover:bg-sky-900 hover:text-white font-serif"onClick={()=>{makeReservation();alert("edit successful")}}>Edit Campground</button>
             </FormControl>
         </main>
     );

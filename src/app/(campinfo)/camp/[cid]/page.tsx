@@ -16,11 +16,9 @@ export default async function CampgroundDetailPage({ params }: { params: { cid: 
                 <div className="text-md mx-5 font-serif">
                     <div>{campgroundDetail.data.name}</div>
                     <div>{campgroundDetail.data.tel}</div>
-                    <Link href={`/booking?id=${params.cid}`}>
-                        <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-1 text-white shadow-sm my-4">
+                        <a href={`/booking?id=${params.cid}`}className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-1 text-white shadow-sm my-4">
                             Make Booking
-                        </button>
-                    </Link>
+                        </a>
                 </div>
             </div>
         </main>
