@@ -2,11 +2,11 @@
 import Link from "next/link";
 import Card from "./Card";
 
-export default async function CampCatalog({ campsJson }: { campsJson:Promise<CampJson>}) {
+export default async function CampCatalog({ campsJson }: { campsJson:CampJson}) {
     const campJsonReady = await campsJson
     return (
         <>
-            Explore {campJsonReady.count} models in our catalog
+            Explore {campJsonReady.count} campgrounds in our catalog
             <div style={{
                 margin: "20px", display: "flex",
                 flexDirection: "row", alignContent: "space-around",

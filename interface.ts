@@ -18,6 +18,5 @@ interface CampItem {
     name: string;
     surname: string;
     id: string;
-    campground: string
     bookDate: string;
   }

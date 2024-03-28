@@ -16,7 +16,7 @@
 .banner {
     position: relative;
     overflow: hidden; /* Prevent image overflow */
-    height: 400px; /* Adjust height as needed */
+    height: 700px; /* Adjust height as needed */
     /* Animation styles */
     animation: changeImage 5s ease-in-out infinite alternate;
   }
@@ -37,10 +37,10 @@
   }
   
   .bannerText {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
-    padding: 2rem; /* Adjust padding for content spacing */
+    padding: 8rem; /* Adjust padding for content spacing */
     color: white; /* Text color for comfortable feel */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
   }

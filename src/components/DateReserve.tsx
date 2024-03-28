@@ -6,8 +6,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider"
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
 import { useState } from "react"
 
-export default function DateReserve({onDateChange, onLocationChange} 
-    :{onDateChange: Function, onLocationChange: Function}){
+export default function DateReserve({onDateChange} 
+    :{onDateChange: Function}){
     const [reserveDate, setReserveDate] = useState<Dayjs|null>(null)
     const [location, setLocation] = useState('BKK')
     return(
@@ -17,14 +17,6 @@ export default function DateReserve({onDateChange, onLocationChange}
                 value={reserveDate}
                 onChange={(value)=>{setReserveDate(value); onDateChange(value)}}/>
             </LocalizationProvider>
-            <Select variant="standard" name="campground" id="campgroound" 
-            value={location}
-            onChange={(e)=>{setLocation(e.target.value); onLocationChange(e.target.value)}}
-            className="h-[2em] w-[200px]">
-            <MenuItem value="กระต่ายกินเนื้อ">กระต่ายกินเนื้อ ลานกางเต๊นท์</MenuItem>
-            <MenuItem value="จูบติ๋มที่ริมบึง">จูบติ๋มที่ริมบึง</MenuItem>
-            <MenuItem value="Lakeview">Lakeview Camping</MenuItem>
-            </Select>
         </div>
     )
 }

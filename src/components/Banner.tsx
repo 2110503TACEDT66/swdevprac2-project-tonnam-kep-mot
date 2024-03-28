@@ -9,8 +9,8 @@ export default function Banner() {
   const covers = ['/img/cover.jpg', '/img/cover2.jpg', '/img/cover3.jpg', '/img/cover4.jpg'];
   const [index, setIndex] = useState(0);
   const router = useRouter();
-  const { data: session } = useSession();
-
+  const URL = `/camp`
+  const win: Window = window;
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % covers.length);
@@ -18,7 +18,6 @@ export default function Banner() {
 
     return () => clearInterval(intervalId);
   }, [covers.length]);
-
   return (
     <div className={styles.banner}>
       <Image
@@ -32,19 +31,16 @@ export default function Banner() {
         <h1 className="text-4xl font-medium">Campground Booking</h1>
         <h3 className="text-xl font-serif">Web application to booking a campground</h3>
       </div>
-      {session ? (
-        <div className="z-30 absolute top-5 left-10 font-semibold text-cyan-800 text-xl">
-          Hello {session.user?.name}
-        </div>
-      ) : null}
       <button
-        className="bg-white text-cyan-600 border border-cyan-600 font-semibold py-2 px-2 m-5 rounded-lg z-30 absolute bottom-0 right-0 hover:bg-cyan-800 hover:text-white hover:border-transparent font-serif"
+        className="text-cyan-600 border border-cyan-600 font-semibold py-2 px-2 m-5 rounded-lg z-30 absolute bottom-0 right-0 hover:bg-cyan-800 hover:text-white hover:border-transparent font-serif"
         onClick={(e) => {
           e.stopPropagation();
-          router.push('/camp');
-        }}
+          win.location.assign(URL)
+          // router.replace('/camp')
+        }
+      }
       >
-        Select Campground
+        Explore our Campground
       </button>
     </div>
   );

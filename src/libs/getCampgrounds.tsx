@@ -1,4 +1,3 @@
-import { resolve } from "path"
 
 export default async function getCampgrounds() {
     await new Promise((resolve)=>setTimeout(resolve,1000))

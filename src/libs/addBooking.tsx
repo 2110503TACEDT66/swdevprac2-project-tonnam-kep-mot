@@ -1,18 +1,16 @@
-export default async function addBooking(id: string,user:string, campground:string, bookingDate:string, token:string) {
-    const response = await fetch(`http://localhost:7777/api/v1/campgrounds/${id}/bookings`, {
+export default async function addbooking(cid: string,user:string, bookingDate:string, token:string ) {
+    console.log({cid,user,bookingDate,token})
+    const response = await fetch(`http://localhost:7777/api/v1/campgrounds/${cid}/bookings`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            authorization: `Bearer ${token}`
+            "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({
             bookingDate:bookingDate,
-            campground:campground,
-            user:user
+            user:user,
+            campground:cid
         }),
     })
-    if (!response.ok) {
-        throw new Error("Failed to fetch cars")
-    }
     return await response.json()
 }
