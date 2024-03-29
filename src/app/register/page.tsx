@@ -17,6 +17,9 @@ const RegisterPage: React.FC = () => {
   };
   const makeRegister = async () => {
     const data = await register(email,password,phone,name)
+    if (data.success) {
+      window.location.assign('/api/auth/signin');
+    }
 }
   return (
     <div className="flex justify-center items-center h-screen">
@@ -84,7 +87,7 @@ const RegisterPage: React.FC = () => {
           <div className="flex items-center justify-center">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit" onClick={()=>{makeRegister();alert()}}
+              type="submit" onClick={()=>{makeRegister()}}
             >
               Register
             </button>
