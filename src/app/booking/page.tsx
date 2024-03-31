@@ -35,7 +35,6 @@ export default function Booking() {
         fetchData()
     },[])
     console.log(bookResponse)
-    if(!bookResponse) return 0;
     // const makeBooking = () => {
     //     if (name  && location && bookingDate) {
     //         const booking: BookingItem = {
@@ -54,19 +53,12 @@ export default function Booking() {
             
     }
     return (
+        
         <main className="w-[100%] flex flex-col items-center space-y-4">
             <div className="text-xl font-medium">Campground Booking</div>
             <FormControl className="w-fit space-y-5 p-[20px] bg-white rounded-2xl flex flex-col items-center">
                 <DateReserve onDateChange={(value:Dayjs) => {setBookingDate(dayjs(value).format())}}/>
                 <button name="Book Vaccine" className=" w-fit block bg-sky-200 text-slate-900 p-[10px] rounded-lg hover:bg-sky-900 hover:text-white font-serif"onClick={()=>{makeReservation();
-                {
-                            if(session.user.role=="user"&& bookResponse>=3){
-                                console.log()
-                                alert("already has 3 bookings you can not booking anymore")
-                            }else{
-                                alert("booking successful")
-                            }
-                        };
                         window.location.assign("/mybooking")}}>
         Book Campground</button>
             </FormControl>
